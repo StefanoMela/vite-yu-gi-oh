@@ -1,6 +1,6 @@
 <script>
-import axios from "axios";
-import { store } from "./data/store.js";
+import axios from 'axios';
+import { store } from './data/store.js';
 
 import AppMain from './components/AppMain.vue'
 import AppCard from './components/AppCard.vue'
@@ -10,6 +10,7 @@ export default {
   data() {
     return {
       store,
+      
     };
   },
 
@@ -21,9 +22,7 @@ export default {
         
 
         store.characters = response.data.data;
-
         console.log(store.characters);
-
       });
     },
 

@@ -7,5 +7,3 @@ export const store = reactive({
     next: null,
     prev: null,
 })
-
-console.log(store.characters);
