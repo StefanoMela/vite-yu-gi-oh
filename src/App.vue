@@ -2,6 +2,10 @@
 import axios from "axios";
 import { store } from "./data/store.js";
 
+import AppMain from './components/AppMain.vue'
+import AppCard from './components/AppCard.vue'
+
+
 export default {
   data() {
     return {
@@ -9,25 +13,34 @@ export default {
     };
   },
 
+  components: { AppMain, AppCard },
+
   methods: {
     fetchCharacters(endpoint) {
       axios.get(endpoint).then((response) => {
+        
 
-        store.cards = response.data.data;
-        console.log(store.cards);
+        store.characters = response.data.data;
+
+        console.log(store.characters);
 
       });
     },
+
+    nextPage(){
+
+      if(!store.next) return;
+    }
   },
 
   created() {
-    this.fetchCharacters("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0");
+    this.fetchCharacters(store.apiUri);
   },
 };
 </script>
 
 <template>
-  <h1>Prova test</h1>
+<AppMain />
 </template>
 
 <style lang="scss" scoped></style>
