@@ -5,7 +5,6 @@ import { store } from './data/store.js';
 import AppMain from './components/AppMain.vue'
 import AppCard from './components/AppCard.vue'
 
-
 export default {
   data() {
     return {
@@ -39,6 +38,9 @@ export default {
 </script>
 
 <template>
+  <div class="header text-center">
+    <h1 class="mt-5">YU-GI-HO Cards</h1>
+  </div>
 <AppMain />
 </template>
 

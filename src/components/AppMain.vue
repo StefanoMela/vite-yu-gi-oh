@@ -1,5 +1,5 @@
 <script>
-import {store} from '../data/store.js'
+import { store } from "../data/store.js";
 import AppCard from "./AppCard.vue";
 
 export default {
@@ -14,14 +14,39 @@ export default {
 </script>
 
 <template>
-  <div class="container py-5">
-    <div class="row row-cols-3">
-      <AppCard 
-      v-for="(character, id) in store.characters"
-      :key="id"
-      :character="character"/>
-    </div>
-  </div>
+    <main>
+        <button type="button" class="btn btn-outline-secondary">Previous Page</button>
+        <button type="button" class="btn btn-outline-secondary">Next Page</button>
+        <div class="card__container">
+          <AppCard
+            v-for="(character, id) in store.characters"
+            :key="id"
+            :character="character"
+          />
+        </div>
+    </main>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+main {
+
+    text-align: center;
+        button {
+            margin-top: 2rem;
+            margin-inline: 1rem;
+        }
+
+}
+
+.card__container {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+}
+
+</style>
