@@ -54,7 +54,7 @@ export default {
 
     handleSearch(archetypeSearch) {
       // il parametro può anche cambiare nome rispetto al nome del componente
-      const searchEndpoint = `${this.apiSearch}${archetypeSearch}`;
+      const searchEndpoint = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${archetypeSearch}`;
       this.fetchCharacters(searchEndpoint);
     },
   },
@@ -81,7 +81,7 @@ export default {
   <div class="container d-flex justify-content-center flex-wrap">
     <SearchBar
       @form-submit="handleSearch"
-      @option-change="handleSearch"
+      @archetype-search="handleSearch"
       placeholder="Cerca Carte X Archetipo"
       buttonText="Daje"
     />
