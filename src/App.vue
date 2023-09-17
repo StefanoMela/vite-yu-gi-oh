@@ -54,7 +54,7 @@ export default {
 
     handleSearch(archetypeSearch) {
       // il parametro può anche cambiare nome rispetto al nome del componente
-      const searchEndpoint = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${archetypeSearch}`;
+      const searchEndpoint = `${this.apiSearch}${archetypeSearch}`;
       this.fetchCharacters(searchEndpoint);
     },
   },
